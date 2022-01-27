@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Текстовий редактор</title>
+</head>
+<body onload="enableEditMode();">
+<h3>Текстовий редактор</h3>
+<div>
+    <button onclick= "execCMD('bold')">Напівжирний</button>
+    <button onclick= "execCMD('Italic')">Нахил</button>
+    <button onclick= "execCMD('justifyLeft')">Вирівняти зліва</button>
+    <button onclick= "execCMD('justifyCenter')">Вирівняти поцентру</button>
+    <button onclick= "execCMD('justifyRight')">Вирівняти зправа</button>
+
+</div>
+<iframe name="richTextField" style="width: 800px; height: 600px"></iframe>
+<script type="text/javascript">
+    function enableEditMode() {
+        richTextField.document.designMode = 'On';
+    }
+    function execCMD (command){
+        richTextField.document.execCommand(command,false,null);
+    }
+</script>
+</body>
+</html>
